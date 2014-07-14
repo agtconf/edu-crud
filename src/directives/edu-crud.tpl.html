@@ -1,0 +1,128 @@
+<div>	 
+<div class="box">
+		<div ng-hide="showForm">
+		   <!-- <div class="panel-heading">	
+			  <div class="row">
+					<div class="col-md-1">
+						<a href="" class="btn btn-primary" ng-show="options.showAddButtonTopLeft" ng-click="add()"><span class="glyphicon glyphicon-plus-sign"></span> {{options.snippets.buttonNew}}</a>
+					</div>
+					<div class="col-md-10"></div>
+					<div class="col-md-1">
+						<a href="" class="btn btn-primary" ng-show="options.showAddButtonTopRight" ng-click="add()"><span class="glyphicon glyphicon-plus-sign"></span> {{options.snippets.buttonNew}}</a>
+					</div>
+				</div>
+ 			</div>-->
+			<div class="panel-body">
+				<div edu-grid  options="options"   ></div>
+			</div>
+			<!--<div class="panel-footer">
+				<div class="row">
+					<div class="col-md-1">
+						<a href="" class="btn btn-primary" ng-show="options.showAddButtonBottomLeft" ng-click="add()"><span class="glyphicon glyphicon-plus-sign"></span> {{options.snippets.buttonNew}}</a>
+					</div>
+					<div class="col-md-10"></div>
+					<div class="col-md-1">
+						<a href="" class="btn btn-primary" ng-show="options.showAddButtonBottomRight" ng-click="add()"><span class="glyphicon glyphicon-plus-sign"></span> {{options.snippets.buttonNew}}</a>
+					</div>
+				</div>
+			</div>-->
+		</div>
+		<div  ng-show="showForm">
+		<!-- form --> 
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col-md-11 col-md-offset-1"><h4 class="panel-heading">{{options.heading}}</h4></div>
+				</div>
+			</div>
+			<div class="panel-body">
+					   <div >
+						   <div edu-form  result="options.formData" options="options" > </div>
+					   
+					   </div>
+             </div>
+             
+    	<!--fin form  -->
+ 		</div>
+		<!-- overlay loading -->
+		
+		 <div name="overlay" class="dw-loading dw-loading-overlay dw-loading-active" ng-show="options.showOverlayCrudFormDelete">
+			<div class="dw-loading-body" >
+				<div class="dw-loading-spinner">
+					<div class="panel panel-default" >
+						<div class="panel-heading" >
+							<div class="row">
+								<div class="col-md-12">
+									<h4>{{options.snippets.formDeleteTitle}}</h4>
+								</div>
+							</div>
+						</div>
+						<div class="panel-body" >
+							<h4>{{options.snippets.formDeleteMessage}} {{keyRowForDelete}}</h4>
+						</div>
+						<div class="panel-footer" >
+						   <div class="row">
+								<div class="col-md-offset-6 col-md-6">  
+									<button ng-click="formDeleteContinue()"  class="btn btn-sm btn-primary" >{{options.snippets.formDeleteButtonContinue}}</button> 
+									<button ng-click="formDeleteCancel()" class="btn btn-sm">{{options.snippets.formDeleteButtonCancel}}</button> 
+								</div> 
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="dw-loading-text">
+				</div>
+			</div>
+		</div>
+		
+		 <div name="overlay" class="dw-loading dw-loading-overlay dw-loading-active" ng-show="options.showOverlayFormUser" >
+			<div class="dw-loading-body" >
+				<div class="dw-loading-spinner">
+					<div class="panel panel-default" >
+					   <form name="formUser" novalidate style="width:400px">
+		
+					
+					   
+						<div class="panel-heading" >
+									<h4>{{options.snippets.formUserTitle}}</h4>
+								
+						</div>
+						<div class="panel-body" >
+						    <h4>{{options.snippets.formUserMessage}}</h4>
+							
+							<ng-form name="formUser">
+							<div class="" ng-repeat="field in options.formUser.fields">
+								<div class="form-group  {{field.col}}" >
+									
+										<label for="{{field.key}}" class="ng-binding" style="align:left">
+											{{field.label}} {{field.required ? '*' : ''}} 
+										</label>
+										<input type="text" class="form-control" id="{{field.key}}" name="{{field.key}}"ng-model="options.formUser.result[field.key]" placeholder="{{field.placeholder}}"  ng-required="field.required" ng-disabled="field.disabled">	   
+									
+								</div>
+							</div>
+                            </ng-form>
+							<div><h5>Nota:</h5> <span>{{options.snippets.formUserNota}}</span></div>
+                           						
+						</div>
+						<div class="panel-footer" >
+						   <div class="row">
+								<div class="col-md-offset-3 col-md-9">  
+									<button ng-click="options.formUser.events.continue(selectedRow)" ng-disabled="formUser.$invalid"  class="btn btn-sm btn-primary" >{{options.snippets.formUserButtonContinue}}</button> 
+									<button ng-click="options.formUser.events.cancel()" class="btn btn-sm">{{options.snippets.formUserButtonCancel}}</button> 
+								</div> 
+							</div>
+						</div>
+				
+            			
+						
+					  </form>
+					</div>
+				</div>
+				<div class="dw-loading-text">
+				</div>
+			</div>
+		</div>
+		   
+  </div>
+ </div>

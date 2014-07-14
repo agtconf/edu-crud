@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Demo eduCrud</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content="educarm"/>
+
+    
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
+	
+	<!-- build:css css/style.css -->
+	<link rel="stylesheet" type="text/css" href="css/angular-loading.css"> 
+	<link rel="stylesheet" type="text/css" href="bower_components/edu-field/dist/edu-field.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/edu-form/dist/edu-form.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/edu-grid/dist/edu-grid.css">
+	
+</head>
+<body ng-controller="appController">
+
+<div id="wrapper">
+    <a href="#" class="btn btn-primary" ng-click="options.crudControl.showOverlayLoading(true)">Muestra Loading</a>
+	<a href="#" class="btn btn-primary" ng-click="options.crudControl.showOverlayLoading(false)">Oculta Loading</a>
+	<a href="#" class="btn btn-primary" ng-click="options.crudControl.showOverlayFormUser(true)">Muestra Form user</a>
+	<a href="#" class="btn btn-primary" ng-click="options.crudControl.showOverlayFormDelete(true)">Muestra Form delete</a>
+	
+	<a href="#" class="btn btn-primary" ng-click="options.crudControl.showButtonsGridUserPre(true)">Muestra Botones pre</a>
+	<a href="#" class="btn btn-primary" ng-click="options.crudControl.showButtonsGridUserPre(false)">Oculta Botones pre</a>
+	<a href="#" class="btn btn-primary" ng-click="options.crudControl.showButtonsGridUserPost(true)">Muestra Botones post</a>
+	<a href="#" class="btn btn-primary" ng-click="options.crudControl.showButtonsGridUserPost(false)">Oculta Botones pre</a>
+	
+	<a href="#" class="btn btn-primary" ng-click="options.crudControl.showButtonsCrudPre(true)">Muestra Botones crud pre</a>
+	<a href="#" class="btn btn-primary" ng-click="options.crudControl.showButtonsCrudPre(false)">Oculta Botones crud pre</a>
+	<a href="#" class="btn btn-primary" ng-click="options.crudControl.showButtonsCrudPost(true)">Muestra Botones crud post</a>
+	<a href="#" class="btn btn-primary" ng-click="options.crudControl.showButtonsCrudPost(false)">Oculta Botones crud pre</a>
+	
+	<a href="#" class="btn btn-primary" ng-click="options.crudControl.refresh()">refresca()</a>
+	<h3>Form user:{{options.formUser.result}}</h3>
+	<h3>Selection rows:{{options.selectionRows}}</h3>
+    <div class="">
+		<div class="">
+			<div class="">
+				<div >
+					<div edu-crud  options="options"   ></div> 
+				</div>
+			</div>
+	</div>
+
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-mocks/angular-mocks.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/textAngular/dist/textAngular.min.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+<script src="bower_components/edu-field/dist/edu-field.js"></script>
+<script src="bower_components/edu-form/dist/edu-form.js"></script>
+<script src="bower_components/edu-grid/dist/edu-grid.js"></script>
+
+
+
+<script src="modules/edu-crud.js"></script>
+<script src="directives/data-factory.js"></script>
+<script src="directives/edu-crud.js"></script>
+
+<script src="app.js"></script>
+<script src="app-mocks.js"></script>
+
+
+</body>
+</html>
